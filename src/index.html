@@ -26,7 +26,7 @@
     <ul class="dila-grid vyber-grid" role="list">
       {% for d in (data.dila|selectattr('cena')|list)[3::37][:8] %}
       <li class="dilo"><a href="{{ url('dila') }}?autor={{ d.prijmeni|urlencode }}"><figure class="rám"><img src="{{ base }}dila/{{ d.img }}" alt="{{ d.nazev }}, {{ d.autor }}" loading="lazy" decoding="async"></figure>
-        <p class="dilo-autor">{{ d.autor }}</p><p class="dilo-nazev">{{ d.nazev }}</p><p class="dilo-info">{{ d.technika }}</p><p class="dilo-cena">{{ '{:,}'.format(d.cena).replace(',', '\u00a0') }}\u00a0Kč</p></a></li>
+        <p class="dilo-autor">{{ d.autor }}</p><p class="dilo-nazev">{{ d.nazev }}</p><p class="dilo-info">{{ d.technika }}</p><p class="dilo-cena">{{ '{:,}'.format(d.cena).replace(',', '&nbsp;') }}&nbsp;Kč</p></a></li>
       {% endfor %}
     </ul>
   </div>
