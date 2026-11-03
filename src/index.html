@@ -14,7 +14,7 @@
         <div><dt>Úvodní slovo</dt><dd>{{ v.uvodni_slovo }}</dd></div>
         <div><dt>Hudební doprovod</dt><dd>{{ v.hudba }}</dd></div>
       </dl>
-      <p><a class="tlacitko" href="#kontakt">Kdy a kde nás najdete</a></p>
+      <p><a class="tlacitko" href="{{ url('kontakt') }}">Kdy a kde nás najdete</a></p>
     </div>
     <figure class="rám hlavni">{{ img(v.obraz, v.obraz_alt, sizes='(min-width: 60rem) 28rem, 85vw') }}</figure>
   </div>
@@ -23,6 +23,7 @@
 <section class="sekce stena" id="galerie">
   <div class="wrap">
     <div class="stena-hlava"><div><h2>V galerii je stále co objevovat</h2>
+    <p><a class="tlacitko" href="{{ url('dila') }}">Katalog děl ({{ data.dila|length }})</a> <a class="tlacitko druhe" href="{{ url('autori') }}">Autoři</a> <a class="tlacitko druhe" href="{{ url('vystavy') }}">Archiv výstav</a></p>
     <p class="uvod">Galerie pod Radnicí je prodejní galerie výtvarného umění. Součástí je Kafírna Galerie, kde se konají výstavy začínajících umělců. V archivu výstav najdete například Františka Květoně v Galerii pod Radnicí (2023).</p>
     
 </div>
@@ -39,7 +40,7 @@
   <div class="wrap">
     <h2>V prodeji: autorské kalendáře 2027</h2>
     <ul role="list"><li>Jana Divišová</li><li>Jana Predikantová</li><li>Iva Hüttnerová</li></ul>
-    <p class="pozn">K zakoupení v galerii, Bartošova 12 · <a href="tel:608872130">608 872 130</a></p>
+    <p class="pozn">K zakoupení v galerii, Bartošova 12 · <a href="{{ url('kalendare') }}">Prohlédnout kalendáře</a></p>
   </div>
 </section>
 

@@ -30,3 +30,26 @@
   var r = document.querySelector('[data-den="' + (den >= 2 && den <= 5 ? 2 : den === 6 ? 6 : 0) + '"]');
   if (r) r.classList.add('dnes-radek');
 })();
+
+/* katalog děl: filtr podle autora a textu, postupné zobrazování */
+(function(){
+  var seznam=document.querySelector('[data-dila]'); if(!seznam) return;
+  var polozky=[].slice.call(seznam.children), selA=document.querySelector('[data-f-autor]'),
+      txt=document.querySelector('[data-f-text]'), pocet=document.querySelector('[data-f-pocet]'),
+      nic=document.querySelector('[data-nic]'), vic=document.querySelector('[data-vic]'), krok=48, limit=krok;
+  var q=new URLSearchParams(location.search).get('autor'); if(q) selA.value=q;
+  function pouzij(){
+    var a=selA.value, t=txt.value.trim().toLowerCase(), shoda=0, videt=0;
+    polozky.forEach(function(li){
+      var ok=(!a||li.dataset.autor===a)&&(!t||li.dataset.hledat.indexOf(t)>-1);
+      if(ok) shoda++;
+      var zobr=ok&&shoda<=limit; li.hidden=!zobr; if(zobr) videt++;
+    });
+    pocet.textContent='Zobrazeno '+videt+' z '+shoda+' děl';
+    nic.hidden=shoda>0; vic.hidden=shoda<=limit;
+  }
+  selA.addEventListener('change',function(){limit=krok;pouzij();});
+  txt.addEventListener('input',function(){limit=krok;pouzij();});
+  vic.addEventListener('click',function(){limit+=krok;pouzij();});
+  pouzij();
+})();

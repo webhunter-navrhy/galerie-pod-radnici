@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+{% set titulek = 'Kontakt a otevírací doba | Galerie pod Radnicí Zlín' %}
+{% set popis = 'Galerie pod Radnicí, Bartošova 12, Zlín. Otevírací doba, e-mail a kontaktní formulář.' %}
+{% set cesta = 'kontakt/' %}
+{% block obsah %}
+<section class="sekce navstiva">
+  <div class="wrap navstiva-grid">
+    <div>
+      <p class="stitek">Navštivte nás</p>
+      <h1 class="h-strana">Kontakt</h1>
+      <p class="uvod">Galerie pod Radnicí<br>Bartošova 12, 760 01 Zlín</p>
+      <p><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a><br><a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a></p>
+      <h2 class="h-pod">Otevírací doba</h2>
+      <table class="doba" data-doba><tbody>
+        <tr data-den="2"><th scope="row">Úterý – pátek</th><td>10:00 – 17:00</td></tr>
+        <tr data-den="6"><th scope="row">Sobota</th><td>10:00 – 12:00</td></tr>
+        <tr data-den="0"><th scope="row">Neděle, pondělí</th><td>zavřeno</td></tr>
+      </tbody></table>
+      <p class="dnes" data-dnes aria-live="polite"></p>
+      <p class="pozn">Otevírací dobu před návštěvou ještě ověřte u galerie.</p>
+    </div>
+    <div>
+      <h2>Napište nám</h2>
+      {% include "_formular.html" %}
+    </div>
+  </div>
+</section>
+{% endblock %}

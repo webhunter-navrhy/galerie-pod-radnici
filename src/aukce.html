@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+{% set titulek = 'Aukce | Galerie pod Radnicí Zlín' %}
+{% set popis = 'Aukce výtvarného umění v Galerii pod Radnicí ve Zlíně.' %}
+{% set cesta = 'aukce/' %}
+{% block obsah %}
+<section class="sekce aukce">
+  <div class="wrap uzky">
+    <p class="stitek">Aukce</p>
+    <h1 class="h-strana">Aukce výtvarného umění</h1>
+    <p class="uvod">Galerie pod Radnicí pořádá aukce výtvarných děl. První živá aukce proběhla 7. 11. 2009 ve 13 hodin; díla k ní byla vystavena v galerii od 2. do 6. 11. 2009.</p>
+    <p>Aktuální termíny aukcí a seznam dražených děl zveřejníme na této stránce. O dalších aukcích se můžete informovat v galerii.</p>
+    <p><a class="tlacitko" href="{{ url('kontakt') }}">Kontaktovat galerii</a> <a class="tlacitko druhe" href="{{ url('dila') }}">Prohlédnout katalog děl</a></p>
+  </div>
+</section>
+{% endblock %}

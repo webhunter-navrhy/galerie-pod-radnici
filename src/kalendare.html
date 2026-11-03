@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+{% set titulek = 'Autorské kalendáře 2027 | Galerie pod Radnicí Zlín' %}
+{% set popis = 'Autorské výtvarné kalendáře na rok 2027 – Jana Divišová, Jana Predikantová, Iva Hüttnerová. K zakoupení v galerii.' %}
+{% set cesta = 'kalendare/' %}
+{% block obsah %}
+<section class="sekce kalendare-str">
+  <div class="wrap">
+    <p class="stitek">V prodeji</p>
+    <h1 class="h-strana">Kalendáře 2027</h1>
+    <p class="uvod">Výtvarné nástěnné kalendáře od autorek, které s galerií spolupracují. K zakoupení přímo v galerii na Bartošově 12.</p>
+    <ul class="kal-grid" role="list">
+      {% for k in data.kalendare %}
+      <li><figure class="rám">{{ img(k.obr, 'Kalendář ' ~ k.nazev ~ ' ' ~ k.rok ~ ', ' ~ k.autor, sizes='(min-width: 60rem) 26rem, 85vw', eager=false) }}</figure>
+        <h2>{{ k.nazev }}</h2><p class="role">{{ k.autor }}</p><p class="pozn">{{ k.pocet_stran }} · {{ k.rozmer }}</p></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

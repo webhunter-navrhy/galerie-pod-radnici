@@ -32,16 +32,28 @@
  },
  "nav": [
   {
-   "text": "Výstava",
-   "href": "#vystava"
+   "text": "Díla",
+   "href": "dila"
   },
   {
-   "text": "Galerie",
-   "href": "#galerie"
+   "text": "Autoři",
+   "href": "autori"
   },
   {
-   "text": "Navštivte nás",
-   "href": "#kontakt"
+   "text": "Výstavy",
+   "href": "vystavy"
+  },
+  {
+   "text": "Kalendáře",
+   "href": "kalendare"
+  },
+  {
+   "text": "Aukce",
+   "href": "aukce"
+  },
+  {
+   "text": "Kontakt",
+   "href": "kontakt"
   }
  ]
 }

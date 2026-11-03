@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+{% set titulek = 'Autoři | Galerie pod Radnicí Zlín' %}
+{% set popis = 'Výtvarníci, jejichž díla nabízí Galerie pod Radnicí ve Zlíně – malíři, grafici a sochaři.' %}
+{% set cesta = 'autori/' %}
+{% block obsah %}
+<section class="sekce autori">
+  <div class="wrap">
+    <p class="stitek">Výtvarníci</p>
+    <h1 class="h-strana">Autoři</h1>
+    <p class="uvod">Abecední přehled autorů, jejichž práci galerie představuje. U každého najdete životopisnou poznámku, pokud ji máme, a počet děl v katalogu.</p>
+    <ul class="autori-grid" role="list">
+      {% for a in data.autori|sort(attribute='razeni') %}
+      <li class="autor{% if a.foto %} s-fotem{% endif %}" id="a{{ loop.index }}">
+        {% if a.foto %}<figure class="rám"><img src="{{ base }}autori/{{ a.foto }}" alt="Portrét: {{ a.jmeno }}" loading="lazy" decoding="async"></figure>{% endif %}
+        <div>
+          <h2>{{ a.jmeno }}</h2>
+          {% if a.role %}<p class="role">{{ a.role }}</p>{% endif %}
+          {% for t in a.text[:1] %}<p>{{ t|replace('/*', '*')|replace('/', ' – ')|truncate(420) }}</p>{% endfor %}
+          {% if a.pocet %}<p class="autor-dila"><a href="{{ url('dila') }}?autor={{ a.filtr|urlencode }}">{{ a.pocet }} {{ 'dílo' if a.pocet == 1 else ('díla' if a.pocet < 5 else 'děl') }} v katalogu</a></p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

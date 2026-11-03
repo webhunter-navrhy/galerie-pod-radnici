@@ -1,0 +1,36 @@
+{% extends "_base.html" %}
+{% set titulek = 'Díla k prodeji – obrazy, grafiky a sochy | Galerie pod Radnicí Zlín' %}
+{% set popis = 'Katalog děl z Galerie pod Radnicí ve Zlíně: ' ~ data.dila|length ~ ' obrazů, grafik a kreseb od ' ~ data.autori|length ~ ' autorů. Filtrujte podle autora.' %}
+{% set cesta = 'dila/' %}
+{% block obsah %}
+<section class="sekce katalog">
+  <div class="wrap">
+    <p class="stitek">Katalog</p>
+    <h1 class="h-strana">Díla v nabídce galerie</h1>
+    <p class="uvod">Přehled {{ data.dila|length }} děl. Cena u díla je orientační, aktuální nabídku a dostupnost potvrdí galerie.</p>
+    <div class="filtr" data-filtr>
+      <label>Autor
+        <select data-f-autor>
+          <option value="">Všichni autoři</option>
+          {% for a in data.autori|sort(attribute='razeni') if a.pocet %}<option value="{{ a.filtr }}">{{ a.jmeno }} ({{ a.pocet }})</option>{% endfor %}
+        </select>
+      </label>
+      <label>Hledat <input type="search" data-f-text placeholder="název, technika…"></label>
+      <p class="filtr-pocet" data-f-pocet aria-live="polite"></p>
+    </div>
+    <ul class="dila-grid" role="list" data-dila>
+      {% for d in data.dila %}
+      <li class="dilo" data-autor="{{ d.prijmeni }}" data-hledat="{{ (d.autor ~ ' ' ~ d.nazev ~ ' ' ~ d.technika)|lower }}">
+        <figure class="rám"><img src="{{ base }}dila/{{ d.img }}" alt="{{ d.nazev }}, {{ d.autor }}" loading="lazy" decoding="async"></figure>
+        <p class="dilo-autor">{{ d.autor }}</p>
+        <p class="dilo-nazev">{{ d.nazev }}</p>
+        <p class="dilo-info">{{ d.technika }}{% if d.rozmer %} · {{ d.rozmer }}{% endif %}</p>
+        <p class="dilo-cena">{% if d.cena %}{{ '{:,}'.format(d.cena).replace(',', ' ') }} Kč{% else %}cena na dotaz{% endif %}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="nenalezeno" data-nic hidden>Nic jsme nenašli. Zkuste jiného autora nebo jiné slovo.</p>
+    <p class="vic"><button type="button" class="tlacitko" data-vic hidden>Zobrazit další díla</button></p>
+  </div>
+</section>
+{% endblock %}

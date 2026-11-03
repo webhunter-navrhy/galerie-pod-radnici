@@ -128,3 +128,44 @@ h1, h2, h3 { font-weight: 400; letter-spacing: -0.01em; }
 .stena-hlava .kafirna { margin: 0; justify-self: center; }
 .kalendare.sekce { padding-bottom: var(--space-4); } .kalendare .pozn { margin-top: var(--space-2); }
 @media (max-width: 40rem) { .kalendare.sekce { padding-block: var(--space-4); } .navstiva.sekce { padding-top: var(--space-4); } }
+
+/* --- vícestránkový web: katalog, autoři, výstavy --- */
+.h-strana{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:.2em 0 .4em}
+.h-pod{margin:2.4rem 0 1rem}
+.uzky{max-width:42rem}
+.tlacitko.druhe{background:transparent;color:inherit;border:2px solid currentColor}
+.filtr{display:flex;flex-wrap:wrap;gap:1rem;align-items:end;margin:1.5rem 0;padding:1rem;background:#fff;border:1px solid #d9d3c5}
+.filtr label{display:grid;gap:.3rem;font-weight:600;font-size:.9rem}
+.filtr select,.filtr input{font:inherit;padding:.6rem .7rem;min-width:14rem;border:1px solid #8a8473;background:#fff}
+.filtr-pocet{margin:0;font-size:.9rem;margin-left:auto}
+.dila-grid,.autori-grid,.kal-grid{list-style:none;padding:0;margin:0;display:grid;gap:2rem 1.5rem}
+.dila-grid{grid-template-columns:repeat(auto-fill,minmax(13rem,1fr))}
+.dilo .rám{margin:0 0 .7rem;aspect-ratio:1;display:grid;place-items:center;background:#fff;padding:.6rem}
+.dilo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.dilo p{margin:.1rem 0}
+.dilo-autor{font-weight:700}
+.dilo-nazev{font-style:italic}
+.dilo-info{font-size:.85rem;color:#5b5646}
+.dilo-cena{font-weight:700;margin-top:.4rem!important}
+.dilo[hidden]{display:none}
+.vic{text-align:center;margin-top:2rem}
+.nenalezeno{padding:2rem 0;font-size:1.1rem}
+.autori-grid{grid-template-columns:repeat(auto-fill,minmax(20rem,1fr))}
+.autor h2{font-size:1.25rem;margin:0}
+.autor .role{margin:.1rem 0 .5rem;color:#5b5646;font-style:italic}
+.autor.s-fotem{display:grid;grid-template-columns:7rem 1fr;gap:1rem}
+.autor .rám{margin:0}
+.autor img{width:100%;height:auto;display:block}
+.autor p{font-size:.95rem}
+.aktualni{display:grid;gap:2rem;grid-template-columns:1fr;margin:1.5rem 0}
+@media(min-width:48rem){.aktualni{grid-template-columns:20rem 1fr;align-items:start}}
+.casova-osa{list-style:none;padding:0;margin:0;border-left:3px solid var(--zluta,#f6b900)}
+.casova-osa li{display:grid;grid-template-columns:5rem 1fr;gap:1rem;padding:0 0 1.6rem 1rem;position:relative}
+.casova-osa .rok{font-weight:700;font-size:1.3rem}
+.casova-osa h3{margin:0 0 .2rem}
+.casova-osa p{margin:.15rem 0}
+.kal-grid{grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.kal-grid h2{font-size:1.2rem;margin:.8rem 0 0}
+.kal-grid .rám{margin:0}
+.kal-grid img{width:100%;height:auto}
+.hlavicka nav{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem}

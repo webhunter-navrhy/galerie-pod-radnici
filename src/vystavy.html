@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+{% set titulek = 'Výstavy a vernisáže | Galerie pod Radnicí Zlín' %}
+{% set popis = 'Aktuální a minulé výstavy Galerie pod Radnicí ve Zlíně i Kafírny Galerie.' %}
+{% set cesta = 'vystavy/' %}
+{% block obsah %}
+<section class="sekce vystavy">
+  <div class="wrap">
+    <p class="stitek">Program</p>
+    <h1 class="h-strana">Výstavy</h1>
+    {% set v = data.vystava %}
+    <article class="aktualni">
+      <figure class="rám">{{ img(v.obraz, v.obraz_alt, sizes='(min-width: 60rem) 24rem, 85vw') }}</figure>
+      <div>
+        <p class="stitek">{{ v.stav }} · {{ v.od }} – {{ v.do }}</p>
+        <h2>{{ v.autor }} – {{ v.typ }}</h2>
+        <p>{{ v.popis }}</p>
+        <p class="pozn">Vernisáž: {{ v.vernisaz }}</p>
+      </div>
+    </article>
+    <h2 class="h-pod">Archiv výstav</h2>
+    <ol class="casova-osa" role="list">
+      {% for e in data.vystavy[1:] %}
+      <li><span class="rok">{{ e.rok }}</span><div><h3>{{ e.nazev }}</h3><p class="pozn">{{ e.kdy }} · {{ e.kde }}</p><p>{{ e.text }}</p></div></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endblock %}
