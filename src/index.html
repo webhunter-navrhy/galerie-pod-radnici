@@ -20,6 +20,18 @@
   </div>
 </section>
 
+<section class="sekce vyber">
+  <div class="wrap">
+    <div class="stena-hlava"><h2>Z nabídky galerie</h2><a class="tlacitko" href="{{ url('dila') }}">Celý katalog ({{ data.dila|length }} děl)</a></div>
+    <ul class="dila-grid vyber-grid" role="list">
+      {% for d in (data.dila|selectattr('cena')|list)[3::37][:8] %}
+      <li class="dilo"><a href="{{ url('dila') }}?autor={{ d.prijmeni|urlencode }}"><figure class="rám"><img src="{{ base }}dila/{{ d.img }}" alt="{{ d.nazev }}, {{ d.autor }}" loading="lazy" decoding="async"></figure>
+        <p class="dilo-autor">{{ d.autor }}</p><p class="dilo-nazev">{{ d.nazev }}</p><p class="dilo-info">{{ d.technika }}</p><p class="dilo-cena">{{ '{:,}'.format(d.cena).replace(',', '\u00a0') }}\u00a0Kč</p></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
 <section class="sekce stena" id="galerie">
   <div class="wrap">
     <div class="stena-hlava"><div><h2>V galerii je stále co objevovat</h2>
@@ -39,8 +51,10 @@
 <section class="sekce kalendare" id="kalendare">
   <div class="wrap">
     <h2>V prodeji: autorské kalendáře 2027</h2>
-    <ul role="list"><li>Jana Divišová</li><li>Jana Predikantová</li><li>Iva Hüttnerová</li></ul>
-    <p class="pozn">K zakoupení v galerii, Bartošova 12 · <a href="{{ url('kalendare') }}">Prohlédnout kalendáře</a></p>
+    <ul class="kal-grid kal-home" role="list">
+      {% for k in data.kalendare %}<li><a href="{{ url('kalendare') }}"><figure class="rám">{{ img(k.obr, 'Kalendář ' ~ k.nazev ~ ', ' ~ k.autor, sizes='(min-width: 60rem) 20rem, 85vw', eager=false) }}</figure><h3>{{ k.nazev }}</h3><span class="role">{{ k.autor }}</span></a></li>{% endfor %}
+    </ul>
+    <p class="pozn">K zakoupení v galerii, Bartošova 12 · <a href="{{ url('kalendare') }}">Podrobnosti ke kalendářům</a></p>
   </div>
 </section>
 

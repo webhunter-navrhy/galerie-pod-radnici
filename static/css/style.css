@@ -81,7 +81,7 @@ h1, h2, h3 { font-weight: 400; letter-spacing: -0.01em; }
 .rám img { width: 100%; height: auto; }
 .vystava { padding-block: var(--space-5) var(--space-6); }
 .vystava-grid { display: grid; gap: var(--space-4); align-items: center; }
-@media (min-width: 60rem) { .vystava-grid { grid-template-columns: 1.15fr .85fr; gap: var(--space-5); } }
+@media (min-width: 60rem) { .vystava-grid { grid-template-columns: .9fr 1.1fr; gap: var(--space-5); } }
 .stitek { font-size: var(--step--1); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-left: 6px solid var(--zluta); padding-left: .75rem; margin-bottom: var(--space-3); }
 .vystava h1 { font-size: var(--step-5); line-height: 1.02; margin-bottom: var(--space-3); }
 .vystava h1 span { display: block; }
@@ -119,7 +119,7 @@ h1, h2, h3 { font-weight: 400; letter-spacing: -0.01em; }
 .plakaty figcaption { font-size: var(--step--1); color: var(--muted); margin-top: .5rem; }
 @media (min-width: 40rem) { .plakaty { grid-template-columns: 1.25fr 1fr; align-items: start; } .plakaty .druhy { margin-top: 3rem; } }
 
-.vystava .hlavni { max-width: 28rem; justify-self: center; width: 100%; }
+.vystava .hlavni { max-width: 38rem; justify-self: center; width: 100%; }
 .kafirna { max-width: 22rem; margin-bottom: var(--space-4); } .kafirna figcaption { font-size: var(--step--1); color: var(--muted); margin-top: .5rem; }
 .logo-pod { font-size: var(--step--1); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-left: .75rem; align-self: center; }
 
@@ -169,3 +169,16 @@ h1, h2, h3 { font-weight: 400; letter-spacing: -0.01em; }
 .kal-grid .rám{margin:0}
 .kal-grid img{width:100%;height:auto}
 .hlavicka nav{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem}
+
+.vyber-grid{margin-top:1.5rem}
+.vyber .dilo a,.kal-home a{text-decoration:none;color:inherit;display:block}
+.vyber .dilo a:hover .dilo-nazev{text-decoration:underline}
+.kal-home h3{margin:.7rem 0 0}.kal-home .role{font-style:italic}
+.hlavicka .logo-pod{display:none}
+@media(min-width:60rem){.hlavicka .logo-pod{display:inline}}
+@media(max-width:47.99rem){
+ .hlavicka .wrap{flex-wrap:wrap;padding-block:.25rem;gap:0}
+ .hlavicka nav{flex-wrap:nowrap;overflow-x:auto;width:100%;gap:0 .4rem;scrollbar-width:none;margin-inline:-.25rem}
+ .hlavicka nav::-webkit-scrollbar{display:none}
+ .hlavicka nav a{white-space:nowrap;min-height:44px;padding-inline:.7rem}
+}
