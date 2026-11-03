@@ -1,0 +1,102 @@
+{
+ "slug": "galerie-pod-radnici",
+ "zdroj_url": "https://galeriepodradnici.cz",
+ "firma": "Galerie pod Radnicí",
+ "obor": [
+  "umění a fotografie",
+  "stavebnictví a řemesla"
+ ],
+ "ico": "",
+ "ares": null,
+ "kontakty": {
+  "emaily": [
+   "info@galeriepodradnici.cz",
+   "okamensky@tiscali.cz"
+  ],
+  "telefony": [
+   "608 872 130"
+  ],
+  "adresa": "Bartošova 12, 760 01 Zlín",
+  "socialni_site": []
+ },
+ "logo": {
+  "soubor": "podklady/logo.jpg",
+  "zdroj": "https://galeriepodradnici.cz/images/Logo_Kafirna.jpg",
+  "rozmery": [
+   402,
+   203
+  ]
+ },
+ "barvy": {
+  "css_promenne": {},
+  "z_css": [
+   "#000080",
+   "#ff9933",
+   "#ff6666",
+   "#911e49",
+   "#009933",
+   "#3366cc"
+  ],
+  "z_loga": [
+   "#ffc200",
+   "#695218"
+  ],
+  "theme_color": null,
+  "doporucene": [
+   "#ffc200",
+   "#695218",
+   "#000080",
+   "#ff9933"
+  ]
+ },
+ "fotky": [
+  {
+   "soubor": "podklady/foto/foto-01.jpg",
+   "url": "https://galeriepodradnici.cz/big_pictures/118A.jpg",
+   "sirka": 566,
+   "vyska": 800,
+   "alt": "Upoutávka"
+  },
+  {
+   "soubor": "podklady/foto/foto-02.jpg",
+   "url": "https://galeriepodradnici.cz/big_pictures/118B.jpg",
+   "sirka": 566,
+   "vyska": 800,
+   "alt": "Upoutávka"
+  }
+ ],
+ "fakta": [
+  {
+   "typ": "odstavec",
+   "text": "V prodeji... Autorské kalendáøe 2027 JANA DIVIOVÁ JANA PREDIKANTOVÁ IVA HÜTTNEROVÁ",
+   "zdroj": "https://galeriepodradnici.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "Frantiek Kvìtoò v Galerii pod Radnicí 2023 Svìt úvìrù.cz Vítejte ve svìtì úvìrù, kde zdánlivì sloité pro Vás bude hraèkou. Razítka Zlín Výroba razítek, vizitky, letáky...",
+   "zdroj": "https://galeriepodradnici.cz/"
+  },
+  {
+   "typ": "odstavec",
+   "text": "©2009 Internetová galerie, Zlín. On-line nákup díla. | @ | Admin | Print-Studio Zlín",
+   "zdroj": "https://galeriepodradnici.cz/"
+  }
+ ],
+ "chybi": [
+  "IČO",
+  "fotky firmy/provozu/produktů (nalezeno 2, potřeba aspoň 6)",
+  "potvrzení služeb a ceníku (nic nevymýšlet)"
+ ],
+ "popis_webu": "Galerie pod Radnicí, Zlín - prodejní galerie výtvarného umìní zastupující autory z celé ÈR. Autorské výstavy umìleckých dìl, vernisáe umìlcù, výstavy zaèínajících umìlcù v kafírnì pod Radnicí.",
+ "overene_udaje": {
+  "zdroj": "https://www.galeriepodradnici.cz/ (úvodní strana, plakáty big_pictures/118A.jpg a 118B.jpg), staženo 3. 11. 2026 ; plakát 126A: https://www.galeriepodradnici.cz/big_pictures/126A.jpg",
+  "adresa": "Bartošova 12, 760 01 Zlín",
+  "telefon": "608 872 130",
+  "email": "info@galeriepodradnici.cz",
+  "doba": "Út–Pá 10–17, So 10–12",
+  "vystava": "Oldřich Jelen – Litografie, 8.–29. 10. 2026, vernisáž čt 8. 10. v 17 h, úvodní slovo Rostislav Marek, hudba Jakub Tichý",
+  "kalendare_2027": "Jana Divišová, Jana Predikantová, Iva Hüttnerová",
+  "vernisaz_dodatek": "za účasti autora (plakát 126A)",
+  "kafirna": "Kafírna Galerie – výstava Františka a Veroniky Jelenových (plakát 118A, 126B)"
+ }
+}

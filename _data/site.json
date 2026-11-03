@@ -1,0 +1,47 @@
+{
+ "slug": "galerie-pod-radnici",
+ "nazev": "Galerie pod Radnicí",
+ "url": "https://webhunter-navrhy.github.io/galerie-pod-radnici/",
+ "base": "/galerie-pod-radnici/",
+ "lang": "cs",
+ "popis": "Galerie pod Radnicí ve Zlíně: prodejní výstavy výtvarného umění, obrazy, grafiky a kalendáře. Bartošova 12, otevřeno úterý až sobota.",
+ "navrh": true,
+ "domena": "",
+ "og_image": "plakat-oldrich-jelen.jpg",
+ "logo": "logo.png",
+ "theme_color": "#f4f1ea",
+ "typ": "ArtGallery",
+ "ico": "",
+ "kontakt": {
+  "email": "info@galeriepodradnici.cz",
+  "telefon": "608 872 130",
+  "adresa": {
+   "ulice": "Bartošova 12",
+   "psc": "760 01",
+   "mesto": "Zlín",
+   "zeme": "CZ"
+  }
+ },
+ "oteviraci_doba": [],
+ "sameas": [],
+ "cenove_rozpeti": "",
+ "formular": {
+  "endpoint": "",
+  "demo": true,
+  "predmet": "Zpráva z webu galerie"
+ },
+ "nav": [
+  {
+   "text": "Výstava",
+   "href": "#vystava"
+  },
+  {
+   "text": "Galerie",
+   "href": "#galerie"
+  },
+  {
+   "text": "Navštivte nás",
+   "href": "#kontakt"
+  }
+ ]
+}

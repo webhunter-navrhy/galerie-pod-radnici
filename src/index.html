@@ -1,0 +1,64 @@
+{% extends "_base.html" %}
+{% set titulek = 'Galerie pod Radnicí Zlín – prodejní výstavy umění, Bartošova 12' %}
+{% set cesta = '' %}
+{% block obsah %}
+{% set v = data.vystava %}
+<section class="vystava" id="vystava">
+  <div class="wrap vystava-grid">
+    <div class="vystava-text">
+      <p class="stitek">{{ v.stav }} · {{ v.od }} – {{ v.do }}</p>
+      <h1><span>{{ v.autor }}</span><em>{{ v.typ }}</em></h1>
+      <p class="perex">{{ v.popis }}</p>
+      <dl class="udaje">
+        <div><dt>Vernisáž</dt><dd>{{ v.vernisaz }}</dd></div>
+        <div><dt>Úvodní slovo</dt><dd>{{ v.uvodni_slovo }}</dd></div>
+        <div><dt>Hudební doprovod</dt><dd>{{ v.hudba }}</dd></div>
+      </dl>
+      <p><a class="tlacitko" href="#kontakt">Kdy a kde nás najdete</a></p>
+    </div>
+    <figure class="rám hlavni">{{ img(v.obraz, v.obraz_alt, sizes='(min-width: 60rem) 28rem, 85vw') }}</figure>
+  </div>
+</section>
+
+<section class="sekce stena" id="galerie">
+  <div class="wrap">
+    <h2>V galerii je stále co objevovat</h2>
+    <p class="uvod">Galerie pod Radnicí je prodejní galerie výtvarného umění. Součástí je Kafírna Galerie, kde se konají výstavy začínajících umělců. V archivu výstav najdete například Františka Květoně v Galerii pod Radnicí (2023).</p>
+    <figure class="rám kafirna">{{ img('plakat-jelenovi.jpg', 'Plakát výstavy Františka a Veroniky Jelenových v Kafírně Galerii: kresba stromu s opicemi, hadem a černou panterou', sizes='(min-width: 60rem) 20rem, 80vw', eager=false) }}<figcaption>Aktuálně v Kafírně: František a Veronika Jelenovi, litografie</figcaption></figure>
+    <div class="stena-grid">
+      <figure class="rám">{{ img('vernisaz-1.jpg', 'Autor výstavy a hosté na vernisáži před zarámovanými litografiemi', sizes='(min-width: 60rem) 30vw, 100vw', eager=false) }}</figure>
+      <figure class="rám">{{ img('vernisaz-2.jpg', 'Hudební doprovod na vernisáži, v pozadí stěna s litografiemi', sizes='(min-width: 60rem) 30vw, 100vw', eager=false) }}</figure>
+      <figure class="rám">{{ img('vernisaz-3.jpg', 'Návštěvníci vernisáže v prostoru galerie', sizes='(min-width: 60rem) 30vw, 100vw', eager=false) }}</figure>
+    </div>
+  </div>
+</section>
+
+<section class="sekce kalendare" id="kalendare">
+  <div class="wrap">
+    <h2>V prodeji: autorské kalendáře 2027</h2>
+    <ul role="list"><li>Jana Divišová</li><li>Jana Predikantová</li><li>Iva Hüttnerová</li></ul>
+  </div>
+</section>
+
+<section class="sekce navstiva" id="kontakt">
+  <div class="wrap navstiva-grid">
+    <div>
+      <h2>Navštivte nás</h2>
+      <p class="uvod">Galerie pod Radnicí<br>Bartošova 12, 760 01 Zlín</p>
+      <p><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a><br><a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a></p>
+    </div>
+    <div>
+      <h3>Otevírací doba</h3>
+      <table class="doba" data-doba>
+        <tbody>
+          <tr data-den="2"><th scope="row">Úterý – pátek</th><td>10:00 – 17:00</td></tr>
+          <tr data-den="6"><th scope="row">Sobota</th><td>10:00 – 12:00</td></tr>
+          <tr data-den="0"><th scope="row">Neděle, pondělí</th><td>zavřeno</td></tr>
+        </tbody>
+      </table>
+      <p class="dnes" data-dnes aria-live="polite"></p>
+      <p class="pozn">Otevírací dobu před návštěvou ještě ověřte u galerie.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
